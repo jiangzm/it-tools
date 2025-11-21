@@ -1,5 +1,6 @@
 import { resolve } from 'node:path';
 import { URL, fileURLToPath } from 'node:url';
+import { execSync } from "child_process";
 
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 import vue from '@vitejs/plugin-vue';
@@ -17,6 +18,7 @@ import svgLoader from 'vite-svg-loader';
 import { configDefaults } from 'vitest/config';
 
 const baseUrl = process.env.BASE_URL ?? '/';
+const commitId = execSync("git rev-parse --short HEAD").toString().trim();
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -106,6 +108,7 @@ export default defineConfig({
   },
   define: {
     'import.meta.env.PACKAGE_VERSION': JSON.stringify(process.env.npm_package_version),
+    'import.meta.env.VITE_VERCEL_GIT_COMMIT_SHA': JSON.stringify(commitId),
   },
   test: {
     exclude: [...configDefaults.exclude, '**/*.e2e.spec.ts'],

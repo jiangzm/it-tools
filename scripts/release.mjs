@@ -42,6 +42,16 @@ await addToChangelog({ changelog: markdown, version });
 consola.success('Changelog updated');
 
 try {
+  const commit = await consola.prompt(
+    'Is it necessary to automatically commit and publish to npm?',
+    {
+      type: 'confirm',
+    },
+  );
+  if (!commit) {
+    consola.info('Aborting');
+    process.exit(0);
+  }
   consola.info('Committing changelog changes');
   await $`git add CHANGELOG.md`;
   await $`git commit -m "docs(changelog): update changelog for ${version}"`;
