@@ -57,6 +57,7 @@ toolCard:
   new: Новий
 search:
   label: Пошук
+  placeholder: 'Введіть, щоб знайти інструмент або команду...'
 tools:
   categories:
     favorite-tools: 'Ваші улюблені інструменти'

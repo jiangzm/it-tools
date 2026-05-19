@@ -57,6 +57,7 @@ toolCard:
   new: Mới
 search:
   label: Tìm kiếm
+  placeholder: 'Nhập để tìm kiếm một công cụ hoặc một lệnh...'
 tools:
   categories:
     favorite-tools: 'Công cụ yêu thích của bạn'

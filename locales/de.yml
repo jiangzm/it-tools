@@ -79,6 +79,7 @@ toolCard:
   new: Neu
 search:
   label: Suche
+  placeholder: 'Gib einen Tool-Namen oder einen Befehl zum Suchen ein...'
 tools:
   categories:
     favorite-tools: Deine Lieblingstools

@@ -57,6 +57,7 @@ toolCard:
   new: Ny
 search:
   label: Søk
+  placeholder: 'Skriv for å søke etter et verktøy eller en kommando...'
 tools:
   categories:
     favorite-tools: 'Dine favoritt verktøy'
